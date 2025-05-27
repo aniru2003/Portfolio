@@ -614,3 +614,242 @@ nav.scrolled {
     max-width: 100%;
   }
 }
+.timeline-section {
+  padding: 5rem 5%;
+  background: var(--light);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--secondary);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -100px;
+  width: 80px;
+  text-align: right;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,158,0,0.1);
+}
+/* Education Section */
+.education {
+  padding: 5rem 5%;
+  background: var(--light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.education-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding-left: 50px;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--gradient);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -100px;
+  width: 80px;
+  text-align: right;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255,158,0,0.15);
+}
+
+.institution {
+  color: var(--secondary);
+  font-weight: 600;
+  margin: 0.5rem 0 1rem;
+}
+
+.achievements li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.achievements li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+/* Interests Bubbles */
+.interests-section {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.interests-section h3 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.interest-bubbles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.bubble {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.bubble:hover {
+  background: var(--gradient);
+  color: white;
+  transform: scale(1.1);
+}
+
+.bubble i {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education-timeline {
+    padding-left: 30px;
+  }
+  
+  .timeline-date {
+    left: -70px;
+    width: 60px;
+  }
+  
+  .bubble {
+    width: 80px;
+    height: 80px;
+    font-size: 0.9rem;
+  }
+}
+
+#journey {
+  margin-top: 3rem;
+}
+/* Remove timeline styles and add year styling */
+.journey {
+  padding: 2rem 5%;
+}
+
+.journey-item {
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-left: 0; /* Remove left padding */
+}
+
+.year {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.journey-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Keep existing styles for institution and achievements */
+.institution {
+  color: var(--secondary);
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.achievements li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.achievements li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
