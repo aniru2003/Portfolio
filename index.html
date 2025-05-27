@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anirudh's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo animate__animated animate__fadeInDown">Anirudh</div>
+    <div class="nav-links animate__animated animate__fadeInDown">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="contact-btn">Hire Me</button>
+    </div>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Anirudh Morishetty</span></h1>
+      <div class="typewriter">I'm a <span id="typing-text"></span></div>
+      <p>
+        Computer Science (IoT) graduate with experience in full-stack development. Passionate about creating beautiful, functional websites and applications that make a difference.
+      </p>
+      <div class="social-links">
+        <a href="#" class="floating" style="animation-delay: 0.1s"><i class="fab fa-github"></i></a>
+        <a href="#" class="floating" style="animation-delay: 0.2s"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="floating" style="animation-delay: 0.3s"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="floating" style="animation-delay: 0.4s"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="cta-buttons">
+        <button class="primary-btn pulse">Download CV</button>
+        <button class="secondary-btn">View Projects</button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="./assets/rarar.jpg" alt="Anirudh Morishetty" class="floating" />
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+    </div>
+  </section>
+
+  <script>
+    const typingText = document.getElementById('typing-text');
+    const words = ["Developer", "Foodie", "Engineer", "Creator"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      const currentChar = currentWord.substring(0, charIndex);
+      typingText.textContent = currentChar;
+
+      if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(type, 150);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 100);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, 1200);
+      }
+    }
+
+    setTimeout(type, 1000);
+
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
