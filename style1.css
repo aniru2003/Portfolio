@@ -833,7 +833,7 @@ nav.scrolled {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Keep existing styles for institution and achievements */
+
 .institution {
   color: var(--secondary);
   font-weight: 600;
@@ -852,4 +852,3 @@ nav.scrolled {
   left: 0;
   color: var(--secondary);
 }
-
