@@ -15,8 +15,9 @@
     <div class="nav-links animate__animated animate__fadeInDown">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <button class="contact-btn">Hire Me</button>
     </div>
@@ -39,9 +40,9 @@
         <a href="https://www.instagram.com/foodpanda_/" target="_blank" class="floating" style="animation-delay: 0.4s"><i class="fab fa-instagram"></i></a>
       </div>
       <div class="cta-buttons">
-        <button class="primary-btn pulse">Download CV</button>
-        <button class="secondary-btn">View Projects</button>
-      </div>
+  <button class="primary-btn pulse" onclick="downloadCV()">Download CV</button>
+  <button class="secondary-btn" onclick="scrollToProjects()">View Projects</button>
+</div>
     </div>
     <div class="hero-image">
       <img src="./assets/rarar.jpg" alt="Anirudh Morishetty" class="floating" />
@@ -49,175 +50,211 @@
       <div class="shape shape-2"></div>
     </div>
   </section>
-  <script>
-    const typingText = document.getElementById('typing-text');
-    const words = ["Developer", "Foodie", "Engineer", "Creator"];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
 
-    function type() {
-      const currentWord = words[wordIndex];
-      const currentChar = currentWord.substring(0, charIndex);
-      typingText.textContent = currentChar;
-
-      if (!isDeleting && charIndex < currentWord.length) {
-        charIndex++;
-        setTimeout(type, 150);
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-        setTimeout(type, 100);
-      } else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(type, 1200);
-      }
-    }
-
-    setTimeout(type, 1000);
-
-    window.addEventListener('scroll', function () {
-      const navbar = document.getElementById('navbar');
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-<section class="about" id="about">
-  <div class="about-container">
-    <div class="about-image">
-      <img src="./assets/about.jpg" alt="Anirudh Morishetty" class="floating" />
-      <div class="shape shape-3"></div>
-    </div>
-    <div class="about-content">
-      <h2>About Me</h2>
-      <p>
-        I'm Anirudh Morishetty, a Computer Science (IoT) graduate with a strong foundation in full-stack development and a passion for creating meaningful digital experiences. Skilled in Python, C++, HTML, CSS, and technical/educational content writing, I enjoy blending logic and creativity to solve real-world problems.
-      </p>
-      <p>
-        Beyond coding, I'm a food enthusiast who loves trying new dishes, a nature explorer drawn to misty, monsoon destinations, and a passionate photographer who captures the beauty around me. I'm also deeply interested in Artificial Intelligence and Machine Learning, constantly seeking to learn and grow in this exciting domain.
-      </p>
-      <div class="interests">
-        <h3>My Interests</h3>
-        <div class="interest-items">
-          <div class="interest-item">
-            <i class="fas fa-laptop-code"></i>
-            <span>AI/ML</span>
-          </div>
-          <div class="interest-item">
-            <i class="fas fa-camera"></i>
-            <span>Photography</span>
-          </div>
-          <div class="interest-item">
-            <i class="fas fa-utensils"></i>
-            <span>Food</span>
-          </div>
-          <div class="interest-item">
-            <i class="fas fa-mountain"></i>
-            <span>Nature</span>
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="./assets/about.jpg" alt="Anirudh Morishetty" class="floating" />
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="about-content">
+        <h2>ABOUT ME</h2>
+        <p>
+          I'm Anirudh Morishetty, a Computer Science (IoT) graduate with a strong foundation in full-stack development and a passion for creating meaningful digital experiences. Skilled in Python, C++, HTML, CSS, and technical/educational content writing, I enjoy blending logic and creativity to solve real-world problems.
+        </p>
+        <p>
+          Beyond coding, I'm a food enthusiast who loves trying new dishes, a nature explorer drawn to misty, monsoon destinations, and a passionate photographer who captures the beauty around me. I'm also deeply interested in Artificial Intelligence and Machine Learning, constantly seeking to learn and grow in this exciting domain.
+        </p>
+        <div class="interests">
+          <h3>My Interests</h3>
+          <div class="interest-items">
+            <div class="interest-item">
+              <i class="fas fa-laptop-code"></i>
+              <span>AI/ML</span>
+            </div>
+            <div class="interest-item">
+              <i class="fas fa-camera"></i>
+              <span>Photography</span>
+            </div>
+            <div class="interest-item">
+              <i class="fas fa-utensils"></i>
+              <span>Food</span>
+            </div>
+            <div class="interest-item">
+              <i class="fas fa-mountain"></i>
+              <span>Nature</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <section class="journey" id="journey">
-  <h2>My Journey</h2>
-  
-  <div class="journey-item">
-    <div class="year">2021 - 2025</div>
-    <div class="journey-content">
-      <h3>Computer Science (IoT) Degree</h3>
-      <p class="institution">Ace Engineering College</p>
-      <ul class="achievements">
-        <li>Developed Agriculture Smart Irrigation Water sprinkler Bot</li>
-        <li>Built sensor networks with Raspberry Pi</li>
-        <li>Graduated with 7.5/10 GPA</li>
-      </ul>
-    </div>
-  </div>
+  </section>
 
-  <div class="journey-item">
-    <div class="year">Nov-2024 - Feb-2025</div>
-    <div class="journey-content">
-      <h3>Web Development Intern</h3>
-      <p class="institution">Edueme Research Labs</p>
-      <ul class="achievements">
-        <li>Built LMS website for robotics content</li>
-        <li>Targeted 2nd-10th grade students</li>
-        <li>Implemented Through MERN Stack,HTML,CSS and JavaScript</li>
-      </ul>
-    </div>
-  </div>
-</section>
-</section>
-<section class="skills" id="skills">
-  <h2>My Skills</h2>
-  <div class="skills-container">
-    <div class="skill-category">
-      <h3>Programming Languages</h3>
-      <div class="skill-items">
-        <div class="skill-item">
-          <i class="fab fa-python"></i>
-          <span>Python</span>
-        </div>
-        <div class="skill-item">
-          <i class="fab fa-html5"></i>
-          <span>HTML5</span>
-        </div>
-        <div class="skill-item">
-          <i class="fab fa-css3-alt"></i>
-          <span>CSS3</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-code"></i>
-          <span>C++</span>
-        </div>
-      </div>
-    </div>
+  <section class="education" id="education">
+    <h2>EDUCATION</h2>
     
-    <div class="skill-category">
-      <h3>Content Writing</h3>
-      <div class="skill-items">
-        <div class="skill-item">
-          <i class="fas fa-pen-fancy"></i>
-          <span>Technical Writing</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-book"></i>
-          <span>Educational Content</span>
-        </div>
+    <div class="education-item">
+      <div class="year">2021 - 2025</div>
+      <div class="education-content">
+        <h3>B.Tech in Computer Science (IoT)</h3>
+        <p class="institution">Ace Engineering College</p>
+        <ul class="details">
+          <li>Specialized in IoT systems and full-stack development</li>
+          <li>Graduated with 7.5/10 GPA</li>
+          <li>Coursework: Embedded Systems, Cloud Computing, Data Structures</li>
+        </ul>
       </div>
     </div>
+
+    <div class="education-item">
+      <div class="year">2019 - 2021</div>
+      <div class="education-content">
+        <h3>Intermediate (12th Grade)</h3>
+        <p class="institution">Sri Gayathri Junior College</p>
+        <ul class="details">
+          <li>MPC (Maths, Physics, Chemistry)</li>
+          <li>Scored 940/1000 in Board Exams</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>MY PROJECTS</h2>
     
-    <div class="skill-category">
-      <h3>Other Skills</h3>
-      <div class="skill-items">
-        <div class="skill-item">
-          <i class="fab fa-js"></i>
-          <span>JavaScript</span>
-        </div>
-        <div class="skill-item">
-          <i class="fab fa-react"></i>
-          <span>React.js</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-database"></i>
-          <span>SQL</span>
-        </div>
-        <div class="skill-item">
-          <i class="fas fa-mobile-alt"></i>
-          <span>Responsive Design</span>
+    <div class="project-item">
+      <div class="year">Nov 2024 - Feb 2025</div>
+      <div class="project-content">
+        <h3>Web Development Intern - Edueme Research Labs</h3>
+        <div class="project-details">
+          <h4>Learning Management System (LMS)</h4>
+          <ul class="features">
+            <li>Built comprehensive LMS platform for robotics education</li>
+            <li>Targeted 2nd-10th grade students with interactive content</li>
+            <li>Implemented user authentication and progress tracking</li>
+          </ul>
+          <div class="tech-stack">
+            <h5>Technologies Used:</h5>
+            <div class="tech-tags">
+              <span>MERN Stack</span>
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>MongoDB</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+
+    <div class="project-item">
+      <div class="year">June-2025</div>
+      <div class="project-content">
+        <h3>Major Project - automated Seed Sowing and Water Sprinkler Bot</h3>
+        <div class="project-details">
+          <h4>IoT-based Agricultural Solution</h4>
+          <ul class="features">
+            <li>It Automatically sows the seeds in the field reducing the work of farmers</li>
+            <li>Developed automated water sprinkler bot for farms</li>
+            <li>Integrated soil moisture sensors and weather data</li>
+            <li>Reduced water usage by 40% in field tests</li>
+          </ul>
+          <div class="tech-stack">
+            <h5>Components Used:</h5>
+            <div class="tech-tags">
+              <span>Raspberry Pi</span>
+              <span>Python</span>
+              <span>IoT Sensors</span>
+              <span>Cloud Integration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div class="year">Febraury-2025</div>
+      <div class="project-content">
+        <h3>Minor Project - Smart School Bell With Timetable & Notice Display</h3>
+        <div class="project-details">
+          <h4>Smart School Bell</h4>
+          <ul class="features">
+            <li>Automatically schedules bell times per school timetable, ensuring accuracy.</li>
+            <li>Provides real-time access to periods, schedules, and announcements.</li>
+            <li>Easily adjusts for holidays, exams, or events.</li>
+            <li>Supports LED display integration for alerts and notifications.</li>
+          </ul>
+          <div class="tech-stack">
+            <h5>Components Used:</h5>
+            <div class="tech-tags">
+              <span>Arduino</span>
+              <span>LED display (16 x 32 inches).</span>
+              <span>STM32 microcontroller</span>
+              <span>Bluetooth Module</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>MY SKILLS</h2>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Front-End Technologies</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-html5"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-css3-alt"></i>
+            <span>CSS3</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <span>C++</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3>Back-End Technologies</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Responsive Design</span>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-js"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-database"></i>
+            <span>SQL</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3>Other Skills</h3>
+        <div class="skill-items">
+          <div class="skill-item">
+            <i class="fas fa-book"></i>
+            <span>Content Writing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </section>
   <section class="contact" id="contact">
-  <h2>Contact Me</h2>
+  <h2>CONTACT ME</h2>
   <div class="contact-container">
     <div class="contact-info">
       <h3>Get in Touch</h3>
@@ -234,13 +271,24 @@
         <span>morishettyanirudh3@gmail.com</span>
       </div>
     </div>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="text" placeholder="Subject">
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="primary-btn">Send Message</button>
-    </form>
+  <form
+  class="contact-form"
+  action="https://formspree.io/f/mpwrdaqo"
+  method="POST"
+><label>
+    Your Name:
+    <input type="name" name="Name" required>
+  </label>
+  <label>
+    Your Email:
+    <input type="email" name="email" required>
+  </label>
+  <label>
+    Your Message:
+    <textarea name="message" required></textarea>
+  </label>
+  <button type="submit" class="primary-btn">Send</button>
+</form>
   </div>
 </section>
 </body>
