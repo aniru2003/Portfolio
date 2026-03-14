@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function downloadCV() {
     try {
       const link = document.createElement('a');
-      link.href = './assets/Morishetty-Anirudh-Resume.pdf';
-      link.download = 'Anirudh-Morishetty-Resume.pdf';
+      link.href = './assets/Anirudh-Resume.pdf';
+      link.download = 'Anirudh-Resume.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

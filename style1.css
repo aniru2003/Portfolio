@@ -1,10 +1,12 @@
 :root {
-  --primary: #6d4300;
-  --secondary: #ff9e00;
-  --accent: #ff6b6b;
-  --light: #fff5e6;
+  --primary: #7c3f00;
+  --secondary: #ff8c00;
+  --accent: #ffb347;
+
+  --light: #fff7ed;
   --dark: #1a1a1a;
-  --gradient: linear-gradient(135deg, var(--secondary), var(--accent));
+
+  --gradient: linear-gradient(135deg, #ff8c00, #ffb347);
 }
 
 * {
@@ -105,6 +107,12 @@ nav.scrolled {
 }
 
 .hero {
+  background: linear-gradient(
+    135deg,
+    #fff7ed 0%,
+    #ffe8cc 40%,
+    #ffd8a8 100%
+  );
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -129,7 +137,7 @@ nav.scrolled {
   background: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: #ff8c00;
 }
 
 .typewriter {
@@ -229,6 +237,16 @@ nav.scrolled {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255,140,0,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .hero-image img {
@@ -418,6 +436,11 @@ nav.scrolled {
   margin: 0.5rem 0 1rem;
 }
 
+.details {
+  list-style: none;
+  padding-left: 0;
+}
+
 .details li {
   margin-bottom: 0.5rem;
   position: relative;
@@ -425,13 +448,16 @@ nav.scrolled {
 }
 
 .details li::before {
-  content: '•';
+  content: '';
   position: absolute;
   left: 0;
-  color: var(--secondary);
-  font-weight: bold;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--secondary);
+  border-radius: 50%;
 }
-
 /* Projects Section */
 .projects {
   padding: 5rem 5%;
@@ -475,6 +501,11 @@ nav.scrolled {
   margin-bottom: 1rem;
 }
 
+.features {
+  list-style: none;
+  padding-left: 0;
+}
+
 .features li {
   margin-bottom: 0.8rem;
   position: relative;
@@ -485,9 +516,10 @@ nav.scrolled {
   content: '▹';
   position: absolute;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--secondary);
 }
-
 .tech-stack {
   margin-top: 1.5rem;
 }
@@ -934,4 +966,31 @@ textarea:invalid + .error-message {
   border: 1px solid #007bff !important;
   outline: none !important;
   box-shadow: none !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+#typing-text {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.typewriter span::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 1s infinite;
+  color: var(--secondary);
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  color: #aaa;
+  font-size: 14px;
 }
